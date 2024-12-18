@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+:root {
+  --background: #0e0e0e;
+  --color-secondary: #8836ff;
+  --foreground: #ffffff;
+  --color-accent: #ff4da6;
+  --color-background: #0e0e0e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e0e0e;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  @apply font-dm-sans;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.background-gradient {
+  background: linear-gradient(135deg, #6b00f5, #8836ff, #ff4da6);
+  background-size: cover;
+}
+.gradient {
+  &--primary {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-secondary),
+      var(--color-accent)
+    );
+    background-size: cover;
+  }
+}
+
+.platform {
+  background-image: url("../assets/GradientsBg.jpg");
+}
+
+@media screen and (max-width: 650px) {
+  .platform {
+    background-image: url("../assets/promo.svg");
+  }
+}
